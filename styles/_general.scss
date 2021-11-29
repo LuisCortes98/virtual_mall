@@ -1,0 +1,108 @@
+﻿/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+button:focus {
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a {
+    line-height: 1.5em !important;
+}
+
+a,
+a:hover,
+a:active {
+    text-decoration: none !important;
+}
+
+.top-0 {
+    top: 0 !important;
+}
+
+.left-0 {
+    left: 0 !important;
+}
+
+.right-0 {
+    right: 0 !important;
+}
+
+.bottom-0 {
+    bottom: 0 !important;
+}
+
+.border-top-dark-black {
+    border-top: 1px solid $dark-black !important;
+}
+
+.border-bottom-dark-black {
+    border-bottom: 1px solid $dark-black !important;
+}
+
+.border-bottom-light-blue {
+    border-bottom: 1px solid $light-blue !important;
+}
+
+.shadow {
+    -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.border-rounded {
+    border-radius: 12px;
+}
+
+.border-rounded-s {
+    border-radius: 5px;
+}
+
+.flex-none {
+    -webkit-box-flex: 0 !important;
+    -ms-flex: none !important;
+    flex: none !important;
+}
+
+.c-pointer {
+    cursor: pointer !important;
+}
+
+.c-default {
+    cursor: default !important;
+}
+
+.scroll-x{
+    overflow-x: scroll;
+}
+
+.scroll-x::-webkit-scrollbar {
+    display: none;
+}
+
+.w-45 {
+    width: 20%;
+}
+
+.w-22 {
+    width: 22.5%;
+}

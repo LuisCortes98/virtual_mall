@@ -1,0 +1,96 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@mixin grid-row-flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+}
+
+@mixin grid-column-flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+}
+
+.row-start {
+        @include grid-row-flex();
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+}
+
+.row-between {
+        @include grid-row-flex();
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+}
+
+.row-center {
+        @include grid-row-flex();
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+}
+
+.row-end {
+        @include grid-row-flex();
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+}
+
+.row-strech {
+        @include grid-row-flex();
+        -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+        justify-content: stretch;
+}
+
+.column-start {
+        @include grid-column-flex();
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+}
+
+.column-between {
+        @include grid-column-flex();
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+}
+
+.column-center {
+        @include grid-column-flex();
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+}
+
+.column-end {
+        @include grid-column-flex();
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+}
+
+.column-strech {
+        @include grid-column-flex();
+        -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+        justify-content: stretch;
+}

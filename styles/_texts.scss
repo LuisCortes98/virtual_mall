@@ -1,0 +1,90 @@
+.txt-bold {
+  @include font-ellipsis;
+  font-family: "Bold";
+  margin-bottom: 5px;
+  cursor: default;
+}
+
+.txt-semibold {
+  @include font-ellipsis;
+  font-family: "Semi-Bold";
+  cursor: default;
+}
+
+.txt-regular {
+  @include font-ellipsis;
+  font-family: "Regular";
+  cursor: default;
+}
+
+.txt-black {
+  color: $black !important;
+}
+
+.txt-white {
+  color: $white !important;
+}
+
+.txt-clear-gray {
+  color: $clear-gray !important;
+}
+
+.txt-dark-gray {
+  color: $dark-gray !important;
+}
+
+.txt-red {
+  color: $red !important;
+}
+
+.txt-light-blue {
+  color: $light-blue !important;
+}
+
+.txt-light-blue2 {
+    color: $light-blue2 !important;
+}
+
+.txt-dark-blue {
+  color: $dark-blue !important;
+}
+
+.txt-dark-blue2 {
+    color: $dark-blue2 !important;
+}
+
+.txt-dark-blue3 {
+  color: $dark-blue3 !important;
+}
+
+.txt-green {
+    color: $green !important;
+}
+
+.txt-green3 {
+  color: $green3 !important;
+}
+
+.txt-reactive-green {
+  color: $reactive-green !important;
+}
+
+.txt-reactive-green2 {
+  color: $reactive-green2 !important;
+}
+
+.txt-hover-green:hover {
+  color: $green !important;
+}
+
+.txt-hover-blue:hover {
+  color: $blue !important;
+}
+
+.txt-blue {
+  color: $blue !important;
+}
+
+.txt-yellow {
+  color: $yellow !important;
+}

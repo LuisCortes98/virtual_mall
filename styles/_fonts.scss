@@ -1,0 +1,51 @@
+@mixin font-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("../public/fonts/Nunito-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Semi-Bold";
+  src: url("../public/fonts/Nunito-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("../public/fonts/OpenSans-Regular.ttf");
+}
+
+@for $i from 0 through 31 {
+  .txt-#{4+($i * 2)} {
+    font-size: #{4 + $i}pt !important;
+  }
+}
+
+@media (min-width: 768px) {
+  @for $i from 0 through 31 {
+    .txt-#{4+($i * 2)} {
+      font-size: #{4 +(($i * 2) - 1)}pt !important;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  @for $i from 0 through 31 {
+    .txt-#{4+($i * 2)} {
+      font-size: #{4 + ($i * 2)}pt !important;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  @for $i from 0 through 31 {
+    .txt-#{4+($i * 2)} {
+      font-size: #{4 + (($i * 2) + 2)}pt !important;
+    }
+  }
+}
