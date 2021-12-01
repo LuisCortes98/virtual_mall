@@ -8,7 +8,7 @@ const Brands = async (_req, res) => {
     
     const db = client.db(process.env.DATABASE);
 
-    db.collection("brands").find({}).toArray(function(err, result) {
+    db.collection("brands").find({active: true}).toArray(function(err, result) {
         if (err) throw err;
         res.status(200).json(result);
     });

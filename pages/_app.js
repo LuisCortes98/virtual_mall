@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import '../styles/style.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../public/icons/css/all.min.css';
+import 'rsuite/dist/styles/rsuite-default.css';
 
 import {useEffect} from "react";
 

@@ -1,0 +1,20 @@
+#chat-bubble {
+    height: 55px;
+    width: 55px;
+    left: 0;
+    bottom: 0;
+}
+
+.product-image{
+    object-fit: contain;
+}
+
+.doc-image {
+    background-color: $dark_blue;
+    width: 8px;
+    height: 8px;
+}
+
+.doc-image.active {
+    background-color: $light-blue;
+}
