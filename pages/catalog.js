@@ -30,7 +30,7 @@ function Catalog(props) {
               <div className="py-2">
                 <div className="txt-dark-blue txt-28 txt-bold">{props.infoCatalog.name}</div>
               </div>
-              <div className="grid-products">
+              <div className="grid-products w-100">
                   {props.products.map(product => <Product key={product._ref} {...product}/>)}
               </div>
               <Chat name={props.infoCatalog.name} number={props.infoCatalog.number_contact}/>

@@ -1,6 +1,6 @@
 import * as creators from '../Creators';
 
-import { GETData } from '../../services/WebServices'
+import { SETData, GETData } from '../../services/WebServices'
 
 export const setBrands = payload => {
     return {
@@ -36,7 +36,7 @@ export const loadBrandsAsync = () => {
 export const loadCatalogProductsAsync = (payload) => {
     return (dispatch, _getState) => {
 
-        GETData("/api/products", "GET")
+        SETData("/api/products", "POST", {name: payload})
         .then(response => dispatch(setCatalogProducts(response)))
         .catch(response => console.log(response));
     }

@@ -6,6 +6,14 @@ const materials = [
     {
         value: "cotton",
         label: "Algodón"
+    },
+    {
+        value: "embroidery",
+        label: "Bordado"
+    },
+    {
+        value: "textile_vinyl",
+        label: "Vinilo textíl"
     }
 ]
 

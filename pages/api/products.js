@@ -1,6 +1,8 @@
 const { MongoClient } = require('mongodb');
 
-const Products = async (_req, res) => {
+const Products = async (req, res) => {
+
+    const name = req.body.name.toLowerCase();
 
     const client = new MongoClient(process.env.CONNECTION_STRING);
 
@@ -8,7 +10,7 @@ const Products = async (_req, res) => {
     
     const db = client.db(process.env.DATABASE);
 
-    db.collection("blackbag_products").find({}).toArray(function(err, result) {
+    db.collection(`${name}_products`).find({}).toArray(function(err, result) {
         if (err) throw err;
         res.status(200).json(result);
     });
