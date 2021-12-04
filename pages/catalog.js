@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Router from 'next/router'
 
 import { connect } from 'react-redux';
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import { Loader } from 'rsuite';
 
@@ -11,7 +11,14 @@ import Chat from "../components/Chat";
 
 function Catalog(props) {
 
+  let productsPerPage = 10;
+  let numberProducts = props.products.length;
+
+  const [page, setpage] = useState(1);
+
   useEffect(() => !props.infoCatalog && Router.push('/'),[]);
+
+  console.log(page-1*productsPerPage, page*productsPerPage);
 
   return (
     <Fragment>
@@ -31,7 +38,15 @@ function Catalog(props) {
                 <div className="txt-dark-blue txt-28 txt-bold">{props.infoCatalog.name}</div>
               </div>
               <div className="grid-products w-100">
-                  {props.products.map(product => <Product key={product._ref} {...product}/>)}
+                  {props.products.slice((page-1)*productsPerPage, page*productsPerPage).map(product => <Product key={product._ref} {...product}/>)}
+              </div>
+              <div className="row-center align-items-center txt-regular w-100 py-4">
+                  <div className="row-center align-items-center">
+                    <div className={`${page>1 ? "": "d-none"} fas fa-chevron-left txt-20 mx-4 c-pointer`}
+                      onClick={() => setpage(page-1)}/>
+                    <div className={`${numberProducts>page*productsPerPage ? "": "d-none"} fas fa-chevron-right txt-20 mx-4 c-pointer`}
+                      onClick={() => setpage(page+1)}/>
+                  </div>
               </div>
               <Chat name={props.infoCatalog.name} number={props.infoCatalog.number_contact}/>
           </div> :
