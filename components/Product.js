@@ -5,11 +5,11 @@ import Image from 'next/image'
 
 import { Fragment, useState } from 'react';
 
-import CustomDot from './shared/CustomDot';
-import Size from './shared/Size';
-import Color from './shared/Color';
-import Material from './shared/Material';
-import FormatCurrency from './shared/FormatCurrency';
+import CustomDot from './Shared/CustomDot';
+import Size from './Shared/Size';
+import Color from './Shared/Color';
+import Material from './Shared/Material';
+import FormatCurrency from './Shared/FormatCurrency';
 
 const responsive = {
     all: {
