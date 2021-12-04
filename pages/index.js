@@ -1,20 +1,16 @@
 import Head from 'next/head'
-import { Fragment, useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { Fragment, useEffect } from 'react';
+
+import * as sharedActions from '../store/shared/Actions'
 
 import { Loader } from 'rsuite';
 
-import { GETData } from '../services/WebServices'
-
 import Brand from "../components/Brand";
 
-export default function Main() {
+function Main(props) {
 
-  const [brands, setBrands] = useState([]);
-
-  useEffect(() => {
-    GETData("/api/brands", "GET")
-      .then(response => setBrands(response))
-  },[]);
+  useEffect(() => props.loadBrandsAsync(),[]);
 
   return (
     <Fragment>
@@ -26,11 +22,15 @@ export default function Main() {
         <link rel="icon" href="/store.ico" />
       </Head>
       
-      {brands.length ?
-      <div className="w-100 vh-100 bg-white column-center align-items-center">
-        <div className="txt-dark-blue txt-28 txt-bold text-center mb-5">Bienvenido a nuestra tienda virtual</div>
-        <div className="row-center align-items-center">
-          {brands.map(brand => <Brand key={brand.id} {...brand}/>)}
+      {props.brands.length ?
+      <div className="vh-100 w-100">
+        <div className="h-100 bg-white column-center align-items-center p-3">
+          <div className="row-center align-items-center">
+            <div className="txt-dark-blue txt-28 txt-bold text-center text-wrap">Bienvenido a nuestra tienda virtual</div>
+          </div>
+          <div className="row-center align-items-center flex-wrap">
+            {props.brands.map(brand => <Brand key={brand.id} {...brand}/>)}
+          </div>
         </div>
       </div> :
       <div className="w-100 h-100 bg-white row-center align-items-center">
@@ -39,3 +39,13 @@ export default function Main() {
     </Fragment>
   )
 }
+
+const mapStateToProps = (state) => ({
+  brands: state.shared.brands
+})
+
+const mapDispatchToProps = dispatch => ({
+  loadBrandsAsync: () => dispatch(sharedActions.loadBrandsAsync())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)

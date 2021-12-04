@@ -6,6 +6,8 @@ import 'rsuite/dist/styles/rsuite-default.css';
 
 import {useEffect} from "react";
 
+import { wrapper } from '../store/Store';
+
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
@@ -15,4 +17,4 @@ function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

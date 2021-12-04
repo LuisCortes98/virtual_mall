@@ -18,3 +18,33 @@
 .doc-image.active {
     background-color: $light-blue;
 }
+
+.circle{
+    width: 25px;
+    height: 25px;
+    border-radius: 800px;
+    border: 1.5px solid $dark-blue4;
+}
+
+.diagonalCross {
+    background: linear-gradient(to top right, #fff calc(50% - 1px), $dark-blue4 , #fff calc(50% + 1px) )
+}
+
+.ring{
+    border: 2px solid $white;
+    outline: 2px solid $black;
+}
+
+.material-container{
+    border-radius: 8px;
+}
+
+.grid-products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: auto;
+
+    @media (min-width: 464px) {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
