@@ -1,6 +1,8 @@
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
+import Image from 'next/image'
+
 import { Fragment, useState } from 'react';
 
 import CustomDot from './shared/CustomDot';
@@ -39,19 +41,19 @@ export default function Product({ _ref, colors, price, materials, dot_heart, cus
                 customDot={<CustomDot />}
                 responsive={responsive}
                 ssr={true}>
-                    {images.map((image, i) => <img key={i} src={`../images/${image}`} height={250} className="w-100 product-image border-rounded" alt="product-image"/>)}
+                    {images.map((image, i) => <img key={i} src={`../images/${image}`} layout="fill" height={250} className="w-100 product-image border-rounded" alt="product-image"/>)}
             </Carousel>
             {materials ? 
                 <Fragment>
                     <div className="col-12 row-center align-items-center my-3">
-                        {materials.map((material) => <Material value={material} activeValue={activeMaterial} setActiveValue={setActiveMaterial}/>)}
+                        {materials.map((material, i) => <Material key={i} value={material} activeValue={activeMaterial} setActiveValue={setActiveMaterial}/>)}
                     </div>
                     <div className="col-12 row-between align-items-center">
                         <div className="row-start align-items-center">
-                            {sizes.map((size) => <Size value={size} activeValue={activeSize} setActiveValue={setActiveSize}/>)}
+                            {sizes.map((size, i) => <Size key={i} value={size} activeValue={activeSize} setActiveValue={setActiveSize}/>)}
                         </div>
                         <div className="row-start align-items-center">
-                            {colors.map((color) => <Color value={color} activeValue={activeColor} setActiveValue={setActiveColor}/>)}
+                            {colors.map((color, i) => <Color key={i} value={color} activeValue={activeColor} setActiveValue={setActiveColor}/>)}
                         </div>
                     </div>
                 </Fragment> : null
